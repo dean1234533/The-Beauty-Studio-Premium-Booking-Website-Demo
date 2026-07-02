@@ -1,0 +1,15 @@
+{
+  "name": "The Beauty Studio Demo Admin",
+  "short_name": "Studio Admin",
+  "description": "Demo admin area for a reusable hair, beauty and wellness booking website.",
+  "start_url": "./admin.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fbf7f1",
+  "theme_color": "#efe3d4",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}

@@ -1,0 +1,38 @@
+.booking-page {
+  width: min(980px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 76px 0 104px;
+}
+
+.booking-hero {
+  max-width: 740px;
+  margin: 0 auto 34px;
+  text-align: center;
+}
+
+.booking-hero h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(48px, 8vw, 86px);
+  font-weight: 400;
+  line-height: 0.98;
+}
+
+.booking-hero p:last-child {
+  max-width: 620px;
+  margin: 18px auto 0;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.booking-widget--page {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+@media (max-width: 760px) {
+  .booking-page {
+    width: calc(100% - 28px);
+    padding: 48px 0 78px;
+  }
+}

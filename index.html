@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Beauty Studio | Premium Hair, Beauty & Wellness Demo</title>
+  <meta name="description" content="A premium reusable hair, beauty and wellness website demo with elegant service pages and a polished online booking system." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" /></noscript>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#efe3d4" />
+  <meta name="apple-mobile-web-app-title" content="The Beauty Studio" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header" id="top">
+    <nav class="nav" id="nav" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="The Beauty Studio home">
+        <span class="brand__mark">TBS</span>
+        <span>
+          <strong>The Beauty Studio</strong>
+          <small>Hair · Beauty · Wellness</small>
+        </span>
+      </a>
+      <div class="nav__links" id="navLinks">
+        <a href="#services">Services</a>
+        <a href="#booking">Booking</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="btn btn--dark nav__cta" href="#booking">Book Now</a>
+      <button class="nav__toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__media" aria-hidden="true">
+        <div class="hero__image hero__image--main"></div>
+        <div class="hero__image hero__image--small"></div>
+        <div class="hero__note">
+          <strong>Online booking demo</strong>
+          <span>Services, times and confirmations in one calm flow</span>
+        </div>
+      </div>
+      <div class="hero__copy">
+        <p class="eyebrow">Premium reusable website demo</p>
+        <h1>Luxury Hair &amp; Beauty, Booked Effortlessly</h1>
+        <p>Explore treatments, view services, and request appointments online through a refined website experience designed for salons, spas, clinics and wellness studios.</p>
+        <div class="hero__actions">
+          <a class="btn btn--dark" href="#booking">Book an Appointment</a>
+          <a class="btn btn--light" href="#services">View Services</a>
+        </div>
+        <div class="hero__stats" aria-label="Demo highlights">
+          <span><strong>9</strong> Service categories</span>
+          <span><strong>4</strong> Step booking</span>
+          <span><strong>100%</strong> Rebrandable</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-strip" aria-label="Service categories">
+      <span>Hair Styling</span>
+      <span>Hair Colour</span>
+      <span>Brows &amp; Lashes</span>
+      <span>Nails</span>
+      <span>Facials</span>
+      <span>Massage</span>
+      <span>Aesthetics</span>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="section__head">
+        <p class="eyebrow">Treatments</p>
+        <h2>Services made easy to browse, compare and book</h2>
+        <p>Example treatments, pricing and durations are realistic placeholders, ready to customise for any hair, beauty or wellness business.</p>
+      </div>
+      <div class="services__grid">
+        <article class="service-card" data-service-link="Signature Cut & Finish">
+          <span>Hair Styling</span>
+          <h3>Signature Cut &amp; Finish</h3>
+          <p>A tailored consultation, precision cut and polished finish for everyday confidence.</p>
+          <div><strong>£48</strong><small>60 mins</small></div>
+          <a href="#booking">Book Now</a>
+        </article>
+        <article class="service-card" data-service-link="Gloss Colour Refresh">
+          <span>Hair Colour</span>
+          <h3>Gloss Colour Refresh</h3>
+          <p>A luminous tonal refresh designed to add softness, shine and depth.</p>
+          <div><strong>£72</strong><small>90 mins</small></div>
+          <a href="#booking">Book Now</a>
+        </article>
+        <article class="service-card" data-service-link="Brow Shape & Tint">
+          <span>Brows &amp; Lashes</span>
+          <h3>Brow Shape &amp; Tint</h3>
+          <p>Defined brows with careful shaping and a natural tint matched to your look.</p>
+          <div><strong>£28</strong><small>30 mins</small></div>
+          <a href="#booking">Book Now</a>
+        </article>
+        <article class="service-card" data-service-link="Luxury Gel Manicure">
+          <span>Nails</span>
+          <h3>Luxury Gel Manicure</h3>
+          <p>Detailed nail care, cuticle work and a long-lasting gel colour finish.</p>
+          <div><strong>£42</strong><small>50 mins</small></div>
+          <a href="#booking">Book Now</a>
+        </article>
+        <article class="service-card" data-service-link="Radiance Facial">
+          <span>Facials</span>
+          <h3>Radiance Facial</h3>
+          <p>A restorative facial using gentle techniques to brighten and calm the skin.</p>
+          <div><strong>£68</strong><small>60 mins</small></div>
+          <a href="#booking">Book Now</a>
+        </article>
+        <article class="service-card" data-service-link="Wellness Massage">
+          <span>Massage</span>
+          <h3>Wellness Massage</h3>
+          <p>A relaxing full-body treatment to ease tension and restore balance.</p>
+          <div><strong>£75</strong><small>75 mins</small></div>
+          <a href="#booking">Book Now</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section booking-section" id="booking">
+      <div class="booking-shell">
+        <div class="booking-intro">
+          <p class="eyebrow">Online booking</p>
+          <h2>A calm appointment journey, built for mobile-first clients</h2>
+          <p>Clients can choose a treatment, select a suitable date and time, enter contact details and receive a clear confirmation message.</p>
+          <ul>
+            <li>Simple 4-step booking journey</li>
+            <li>Clear prices and durations</li>
+            <li>Easy to update services later</li>
+          </ul>
+        </div>
+        <div class="booking-widget" data-booking-widget>
+          <div class="booking-progress" aria-label="Booking progress">
+            <span class="active">Service</span>
+            <span>Date</span>
+            <span>Time</span>
+            <span>Details</span>
+          </div>
+          <form class="booking-form">
+            <div class="booking-step active" data-step="0">
+              <h3>Choose a treatment</h3>
+              <div class="booking-options" data-services></div>
+            </div>
+            <div class="booking-step" data-step="1">
+              <h3>Select a date</h3>
+              <div class="date-grid" data-dates></div>
+            </div>
+            <div class="booking-step" data-step="2">
+              <h3>Select a time</h3>
+              <p class="booking-muted" data-selected-date></p>
+              <div class="time-grid" data-times></div>
+            </div>
+            <div class="booking-step" data-step="3">
+              <h3>Your details</h3>
+              <div class="booking-summary" data-summary></div>
+              <label>Full name<input name="name" type="text" autocomplete="name" required placeholder="Sophie Morgan" /></label>
+              <label>Email address<input name="email" type="email" autocomplete="email" required placeholder="sophie@example.com" /></label>
+              <label>Phone number<input name="phone" type="tel" autocomplete="tel" required placeholder="07123 456789" /></label>
+              <label>Notes<textarea name="notes" rows="3" placeholder="Anything you would like the team to know?"></textarea></label>
+            </div>
+            <div class="booking-confirmation" data-confirmation hidden>
+              <div class="confirmation__icon">✓</div>
+              <h3>Booking request received</h3>
+              <p>Thank you. This demo shows the confirmation clients would see after requesting an appointment.</p>
+              <div data-confirmation-details></div>
+            </div>
+            <div class="booking-actions">
+              <button class="btn btn--light" type="button" data-back>Back</button>
+              <button class="btn btn--dark" type="button" data-next>Continue</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section split" id="about">
+      <div class="split__image"></div>
+      <div class="split__copy">
+        <p class="eyebrow">About the demo brand</p>
+        <h2>Premium care in a calm, welcoming environment</h2>
+        <p>The Beauty Studio offers premium hair, beauty and wellness treatments in a refined setting designed to feel relaxed, personal and professional. The wording stays intentionally flexible, so the site can be adapted for salons, barbers, nail studios, spas, aesthetics clinics and independent therapists.</p>
+        <p>Every section is structured to help visitors understand the services, trust the experience and take the next step by booking online.</p>
+      </div>
+    </section>
+
+    <section class="section why">
+      <div class="section__head">
+        <p class="eyebrow">Why choose us</p>
+        <h2>Trust-building details for service-led businesses</h2>
+      </div>
+      <div class="why__grid">
+        <article><h3>Experienced Professionals</h3><p>Confident, reassuring copy that presents the team as skilled and attentive.</p></article>
+        <article><h3>Online Booking</h3><p>A clear booking experience that helps turn interest into appointment requests.</p></article>
+        <article><h3>Premium Treatments</h3><p>Luxury positioning with realistic service descriptions and pricing.</p></article>
+        <article><h3>Personalised Service</h3><p>Warm language that makes every treatment feel considered and tailored.</p></article>
+        <article><h3>Relaxing Environment</h3><p>Soft visuals and generous spacing create a calm, professional impression.</p></article>
+        <article><h3>Flexible Appointments</h3><p>Availability messaging supports busy clients booking from their phone.</p></article>
+      </div>
+    </section>
+
+    <section class="section gallery" id="gallery">
+      <div class="section__head">
+        <p class="eyebrow">Gallery</p>
+        <h2>Premium image placeholders for real work and interiors</h2>
+      </div>
+      <div class="carousel gallery-carousel" data-carousel data-autoplay="4600" aria-label="Gallery carousel">
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+            <div class="gallery__item gallery__item--hair carousel__slide"><span>Hairstyles</span></div>
+            <div class="gallery__item gallery__item--beauty carousel__slide"><span>Beauty Treatments</span></div>
+            <div class="gallery__item gallery__item--nails carousel__slide"><span>Nails</span></div>
+            <div class="gallery__item gallery__item--makeup carousel__slide"><span>Makeup</span></div>
+            <div class="gallery__item gallery__item--spa carousel__slide"><span>Spa Treatments</span></div>
+            <div class="gallery__item gallery__item--interior carousel__slide"><span>Salon Interiors</span></div>
+          </div>
+        </div>
+        <div class="carousel__controls">
+          <button class="carousel__button" type="button" data-carousel-prev aria-label="Previous gallery image">‹</button>
+          <div class="carousel__dots" data-carousel-dots></div>
+          <button class="carousel__button" type="button" data-carousel-next aria-label="Next gallery image">›</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonials" id="testimonials">
+      <div class="section__head">
+        <p class="eyebrow">Testimonials</p>
+        <h2>Natural, believable reviews for the demo experience</h2>
+      </div>
+      <div class="carousel testimonials-carousel" data-carousel data-autoplay="5200" aria-label="Testimonials carousel">
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+            <article class="carousel__slide"><div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div><p>“The booking process was so simple, and the treatment felt really considered from start to finish.”</p><strong>Sophie M.</strong></article>
+            <article class="carousel__slide"><div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div><p>“A beautiful, calm experience. I found the service I wanted quickly and booked on my lunch break.”</p><strong>Olivia R.</strong></article>
+            <article class="carousel__slide"><div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div><p>“The website feels premium and trustworthy. It made choosing a treatment feel effortless.”</p><strong>Amelia T.</strong></article>
+            <article class="carousel__slide"><div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div><p>“Clear prices, easy times and a lovely confirmation message. Exactly what I want from online booking.”</p><strong>Chloe B.</strong></article>
+          </div>
+        </div>
+        <div class="carousel__controls">
+          <button class="carousel__button" type="button" data-carousel-prev aria-label="Previous review">‹</button>
+          <div class="carousel__dots" data-carousel-dots></div>
+          <button class="carousel__button" type="button" data-carousel-next aria-label="Next review">›</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <p class="eyebrow">Ready when they are</p>
+      <h2>Encourage visitors to book their next appointment online</h2>
+      <a class="btn btn--dark" href="#booking">Book an Appointment</a>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>The Beauty Studio</h2>
+        <address>
+          42 Rosewood Avenue<br />
+          Manchester<br />
+          M2 6QF<br />
+          United Kingdom
+        </address>
+        <p><a href="tel:01615550184">0161 555 0184</a><br /><a href="mailto:hello@thebeautystudio.co.uk">hello@thebeautystudio.co.uk</a></p>
+      </div>
+      <div class="hours">
+        <h3>Opening hours</h3>
+        <p><span>Monday</span><strong>Closed</strong></p>
+        <p><span>Tuesday to Friday</span><strong>9:00am - 7:00pm</strong></p>
+        <p><span>Saturday</span><strong>9:00am - 5:00pm</strong></p>
+        <p><span>Sunday</span><strong>10:00am - 4:00pm</strong></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__grid">
+      <div>
+        <a class="brand brand--footer" href="#top">
+          <span class="brand__mark">TBS</span>
+          <span><strong>The Beauty Studio</strong><small>Demo website</small></span>
+        </a>
+        <p>This website is a demonstration project created to showcase website design and booking functionality. Business details, services, testimonials, and contact information are fictional.</p>
+      </div>
+      <div>
+        <h3>Navigate</h3>
+        <a href="#services">Services</a>
+        <a href="#booking">Booking</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+      </div>
+      <div>
+        <h3>Categories</h3>
+        <a href="#services">Hair Styling</a>
+        <a href="#services">Brows &amp; Lashes</a>
+        <a href="#services">Facials</a>
+        <a href="#services">Massage</a>
+      </div>
+      <div>
+        <h3>Social</h3>
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">TikTok</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js?v=2"></script>
+  <script src="booking.js?v=2"></script>
+</body>
+</html>

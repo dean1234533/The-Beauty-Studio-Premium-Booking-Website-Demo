@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book an Appointment | The Beauty Studio Demo</title>
+  <meta name="description" content="Book a demo hair, beauty or wellness appointment with The Beauty Studio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" /></noscript>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#efe3d4" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="booking.css" />
+</head>
+<body>
+  <header class="site-header" id="top">
+    <nav class="nav" id="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="The Beauty Studio home">
+        <span class="brand__mark">TBS</span>
+        <span>
+          <strong>The Beauty Studio</strong>
+          <small>Hair · Beauty · Wellness</small>
+        </span>
+      </a>
+      <div class="nav__links" id="navLinks">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#booking">Booking</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#gallery">Gallery</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <a class="btn btn--dark nav__cta" href="index.html#booking">Book Now</a>
+      <button class="nav__toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="booking-page">
+    <section class="booking-hero">
+      <p class="eyebrow">The Beauty Studio</p>
+      <h1>Request an appointment</h1>
+      <p>Choose a treatment, date and time in a polished booking journey designed for hair, beauty and wellness businesses.</p>
+    </section>
+
+    <section class="booking-widget booking-widget--page" data-booking-widget>
+      <div class="booking-progress" aria-label="Booking progress">
+        <span class="active">Service</span>
+        <span>Date</span>
+        <span>Time</span>
+        <span>Details</span>
+      </div>
+      <form class="booking-form">
+        <div class="booking-step active" data-step="0">
+          <h3>Choose a treatment</h3>
+          <div class="booking-options" data-services></div>
+        </div>
+        <div class="booking-step" data-step="1">
+          <h3>Select a date</h3>
+          <div class="date-grid" data-dates></div>
+        </div>
+        <div class="booking-step" data-step="2">
+          <h3>Select a time</h3>
+          <p class="booking-muted" data-selected-date></p>
+          <div class="time-grid" data-times></div>
+        </div>
+        <div class="booking-step" data-step="3">
+          <h3>Your details</h3>
+          <div class="booking-summary" data-summary></div>
+          <label>Full name<input name="name" type="text" autocomplete="name" required placeholder="Sophie Morgan" /></label>
+          <label>Email address<input name="email" type="email" autocomplete="email" required placeholder="sophie@example.com" /></label>
+          <label>Phone number<input name="phone" type="tel" autocomplete="tel" required placeholder="07123 456789" /></label>
+          <label>Notes<textarea name="notes" rows="3" placeholder="Anything you would like the team to know?"></textarea></label>
+        </div>
+        <div class="booking-confirmation" data-confirmation hidden>
+          <div class="confirmation__icon">✓</div>
+          <h3>Booking request received</h3>
+          <p>Thank you. This demo shows the confirmation clients would see after requesting an appointment.</p>
+          <div data-confirmation-details></div>
+        </div>
+        <div class="booking-actions">
+          <button class="btn btn--light" type="button" data-back>Back</button>
+          <button class="btn btn--dark" type="button" data-next>Continue</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__grid">
+      <div>
+        <a class="brand brand--footer" href="index.html">
+          <span class="brand__mark">TBS</span>
+          <span><strong>The Beauty Studio</strong><small>Demo website</small></span>
+        </a>
+        <p>This website is a demonstration project created to showcase website design and booking functionality. Business details, services, testimonials, and contact information are fictional.</p>
+      </div>
+      <div>
+        <h3>Navigate</h3>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <a href="index.html#services">Hair Styling</a>
+        <a href="index.html#services">Facials</a>
+        <a href="index.html#services">Massage</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <a href="tel:01615550184">0161 555 0184</a>
+        <a href="mailto:hello@thebeautystudio.co.uk">hello@thebeautystudio.co.uk</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js?v=2"></script>
+  <script src="booking.js?v=2"></script>
+</body>
+</html>

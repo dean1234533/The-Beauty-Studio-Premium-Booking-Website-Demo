@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin – Da Cuts Bookings</title>
+  <link rel="manifest" href="manifest-admin.json" />
+  <meta name="theme-color" content="#C9A96E" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Da Cuts Admin" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400&family=Inter:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body class="admin-body">
+
+  <!-- LOGIN GATE -->
+  <div class="admin-gate" id="adminGate">
+    <div class="admin-gate__box">
+      <span class="admin-gate__logo">Da <em>Cuts</em></span>
+      <h1>Admin Access</h1>
+      <p>Sign in with your admin email and password</p>
+      <div class="form-group" style="width:100%">
+        <input type="email" id="adminEmail" placeholder="Email" autocomplete="email" />
+      </div>
+      <div class="form-group" style="width:100%">
+        <input type="password" id="adminPassword" placeholder="Password" autocomplete="current-password" />
+      </div>
+      <button class="btn btn--gold btn--full" id="adminLogin">Sign In ↗</button>
+      <p class="admin-gate__error" id="adminError"></p>
+    </div>
+  </div>
+
+  <!-- ADMIN DASHBOARD -->
+  <div class="admin-dash" id="adminDash" style="display:none">
+
+    <header class="admin-header">
+      <div class="admin-header__left">
+        <span class="admin-logo">Da <em>Cuts</em></span>
+        <span class="admin-badge">Admin</span>
+      </div>
+      <div class="admin-header__right">
+        <button class="admin-notify-btn" id="enableNotifications"><span class="btn-icon">🔔</span><span class="btn-label">Enable Notifications</span></button>
+        <button class="admin-notify-btn" id="changePasswordBtn"><span class="btn-icon">🔑</span><span class="btn-label">Change Password</span></button>
+        <button class="btn btn--ghost admin-signout" id="adminLogout">Sign Out</button>
+      </div>
+    </header>
+
+    <!-- TABS -->
+    <div class="admin-tabs">
+      <button class="admin-tab active" data-tab="bookings">Bookings</button>
+      <button class="admin-tab" data-tab="hours">Business Hours</button>
+    </div>
+
+    <main class="admin-main">
+
+      <!-- ── BOOKINGS TAB ── -->
+      <div class="admin-tab-panel active" id="tab-bookings">
+
+        <!-- STATS ROW -->
+        <div class="admin-stats">
+          <div class="admin-stat">
+            <span class="admin-stat__num" id="statTotal">—</span>
+            <span class="admin-stat__label">Total Bookings</span>
+          </div>
+          <div class="admin-stat">
+            <span class="admin-stat__num" id="statToday">—</span>
+            <span class="admin-stat__label">Today</span>
+          </div>
+          <div class="admin-stat">
+            <span class="admin-stat__num" id="statPending">—</span>
+            <span class="admin-stat__label">Pending</span>
+          </div>
+          <div class="admin-stat">
+            <span class="admin-stat__num" id="statThisWeek">—</span>
+            <span class="admin-stat__label">This Week</span>
+          </div>
+        </div>
+
+        <!-- FILTERS -->
+        <div class="admin-filters">
+          <div class="admin-filters__left">
+            <button class="admin-filter-btn active" data-filter="all">All</button>
+            <button class="admin-filter-btn" data-filter="pending">Pending</button>
+            <button class="admin-filter-btn" data-filter="confirmed">Confirmed</button>
+            <button class="admin-filter-btn" data-filter="cancelled">Cancelled</button>
+          </div>
+          <div class="admin-search">
+            <input type="text" id="adminSearch" placeholder="Search by name or service…" />
+          </div>
+        </div>
+
+        <!-- ALERT PREFERENCES -->
+        <div class="alert-prefs">
+          <span class="alert-prefs__label">When a booking arrives:</span>
+          <label class="alert-pref-item" id="vibrateLabel" title="Vibrate on Android only">
+            <span class="alert-pref-icon">📳</span>
+            <span class="alert-pref-text">Vibrate</span>
+            <span class="hours-toggle-track" id="vibrateTrack"><span class="hours-toggle-thumb"></span></span>
+            <input type="checkbox" id="alertVibrate" class="alert-pref-chk" />
+          </label>
+          <label class="alert-pref-item">
+            <span class="alert-pref-icon">🔊</span>
+            <span class="alert-pref-text">Beep</span>
+            <span class="hours-toggle-track" id="soundTrack"><span class="hours-toggle-thumb"></span></span>
+            <input type="checkbox" id="alertSound" class="alert-pref-chk" />
+          </label>
+        </div>
+
+        <!-- BOOKINGS LIST -->
+        <div class="admin-bookings" id="adminBookings">
+          <div class="admin-loading">Loading bookings…</div>
+        </div>
+
+      </div>
+
+      <!-- ── HOURS TAB ── -->
+      <div class="admin-tab-panel" id="tab-hours">
+        <div class="hours-header">
+          <div>
+            <h2 class="hours-title">Business Hours</h2>
+            <p class="hours-sub">Set when customers can book. Changes take effect immediately.</p>
+          </div>
+          <button class="btn btn--gold" id="saveHours">Save Hours ↗</button>
+        </div>
+        <p class="hours-save-msg" id="hoursSaveMsg"></p>
+        <div class="hours-grid" id="hoursGrid">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- DELETE CONFIRMATION MODAL -->
+  <div class="admin-modal-overlay" id="deleteModal">
+    <div class="admin-modal admin-modal--sm">
+      <h2>Delete Booking?</h2>
+      <p>This will permanently remove the booking for:</p>
+      <p class="delete-modal__name" id="deleteModalName"></p>
+      <p style="color:var(--text-muted);font-size:12px">This cannot be undone.</p>
+      <div class="delete-modal__actions">
+        <button class="btn btn--ghost" id="deleteCancelBtn">Cancel</button>
+        <button class="btn delete-modal__confirm" id="deleteConfirmBtn">Delete ↗</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHANGE PASSWORD MODAL -->
+  <div class="admin-modal-overlay" id="passwordModal">
+    <div class="admin-modal">
+      <button class="admin-modal__close" id="passwordModalClose">✕</button>
+      <h2>Change Password</h2>
+      <p>Enter your current password, then choose a new one.</p>
+      <div class="form-group">
+        <label>Current Password</label>
+        <input type="password" id="currentPassword" placeholder="Current password" />
+      </div>
+      <div class="form-group">
+        <label>New Password</label>
+        <input type="password" id="newPassword" placeholder="Min. 8 characters" />
+      </div>
+      <div class="form-group">
+        <label>Confirm New Password</label>
+        <input type="password" id="confirmPassword" placeholder="Repeat new password" />
+      </div>
+      <p class="admin-modal__error" id="passwordError"></p>
+      <p class="admin-modal__success" id="passwordSuccess"></p>
+      <button class="btn btn--gold btn--full" id="savePassword">Update Password ↗</button>
+    </div>
+  </div>
+
+  <!-- PWA Install Banner -->
+  <div class="pwa-banner" id="pwaBanner">
+    <div class="pwa-banner__icon">✂</div>
+    <div class="pwa-banner__text">
+      <strong>Add the Admin App to your home screen</strong>
+      <span id="pwaBannerInstructions">Tap the share icon ⎙ then "Add to Home Screen" for quick access</span>
+    </div>
+    <button class="pwa-banner__install" id="pwaInstallBtn" style="display:none">Install</button>
+    <button class="pwa-banner__close" id="pwaBannerClose" aria-label="Dismiss">✕</button>
+  </div>
+
+  <script type="module" src="admin.js"></script>
+  <script src="pwa.js" defer></script>
+</body>
+</html>

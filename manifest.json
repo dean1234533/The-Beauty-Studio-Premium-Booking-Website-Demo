@@ -1,0 +1,15 @@
+{
+  "name": "The Beauty Studio Demo",
+  "short_name": "Beauty Studio",
+  "description": "Premium reusable hair, beauty and wellness website demo with online booking.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fbf7f1",
+  "theme_color": "#efe3d4",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}
